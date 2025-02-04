@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-family: 'poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content:center;
+    /*appears at the top of the page because the body height is only as tall as the "content in it", leading to no vertical space that can be centered.*/
+    align-items:center;  /* Centers items vertically and here it take the height of the body with nothing */
+    min-height: 100vh; /* Full height of the viewport */
+    background-color: black;
+}
+
+.login-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background:red ;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom:2px solid #fff ;
+}
+
+/*:focus and :valid: Indicate the states of the input which trigger a change in the label's position.
+top: -5px;: Adjusts the label's position slightly upward when an appropriate event occurs.
+transition: .5s;: Creates a smooth animation effect for the change in label position.
+This combination creates a user-friendly experience, making it clear when an input is active or valid while maintaining a clean and appealing layout. */
+.input-box label {
+    position: absolute;
+    top: 50%;  /* Position the top of the label at the vertical center of the parent */
+    left: 5px;
+    transform: translateY(-50%);  /* Move the label upward by 50% of its own height for vertical centering */ 
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;  /* Makes the label not respond to mouse events */ 
+    transition: .5s;  /* Smoothly transition changes over 0.5 seconds */ 
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+    top: -5px;
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;  /* Set the height of the line to 57 pixels for vertical alignment */
+}
