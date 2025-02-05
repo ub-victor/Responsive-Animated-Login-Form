@@ -17,7 +17,17 @@ section{
     background: url('img/bg.jpg')  no-repeat;
     background-size: cover;
     background-position: center;
+    /* Applies an infinite background animation with a duration of 5 seconds and a linear timing function */
+    animation: animateBg 5s linear infinite;
+}
 
+/* Defines a keyframe animation that applies a hue rotation filter to the element, 
+    rotating the hue by 360 degrees over the duration of the animation */
+
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .login-box{
@@ -138,4 +148,17 @@ button{
 
 .register-link p a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 360px) {
+    .login-box {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+    }
+
+    .input-box{
+        width: 290px;
+    }
 }
