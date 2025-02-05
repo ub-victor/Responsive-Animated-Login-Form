@@ -7,23 +7,30 @@
     font-family: 'poppins',sans-serif;
 }
 
-body{
+section{
     display: flex;
-    justify-content:center;
-    /*appears at the top of the page because the body height is only as tall as the "content in it", leading to no vertical space that can be centered.*/
-    align-items:center;  /* Centers items vertically and here it take the height of the body with nothing */
-    min-height: 100vh; /* Full height of the viewport */
-    background-color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100;
+    /* Sets the height of the element to 100% of the viewport height */
+    height: 100vh;
+    background: url('img/bg.jpg')  no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .login-box{
     position: relative;
     width: 400px;
     height: 450px;
-    background:red ;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     display: flex;
     justify-content: center;
+    /* Applies a blur effect to the area behind the element */
+    backdrop-filter: blur(15px);
 }
 
 h2{
